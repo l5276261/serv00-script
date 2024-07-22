@@ -23,6 +23,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests  # 只需安装需要的依赖，此处假设使用 requests 发送 HTTP 请求
 
+      - name: 安装pm2
+        run: |
+          npm install pm2 -g
+          echo "::add-path::$(npm config get prefix)/bin"
+
       - name: 设置环境变量
         run: |
           echo "~/.npm-global/bin" >> $GITHUB_PATH
