@@ -22,11 +22,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install requests  # 只需安装需要的依赖，此处假设使用 requests 发送 HTTP 请求
-          
-      - name: 更新PATH
-        run: |
-          # 添加 pm2 到 PATH
-          echo "export PATH=~/.npm-global/bin/pm2:\$PATH" >> $GITHUB_ENV
 
       - name: 执行Python脚本恢复vless服务并发送Telegram消息
         env:
