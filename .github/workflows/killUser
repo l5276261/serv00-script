@@ -1,0 +1,13 @@
+
+name: 强行安装pm2
+on:
+  workflow_dispatch:
+
+jobs:
+  restore_and_notify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 终止DreamLong233用户的所有进程
+        run: |
+          killall -u DreamLong233  && bash <(curl -s https://raw.githubusercontent.com/k0baya/alist_repl/main/serv00/install-pm2.sh
